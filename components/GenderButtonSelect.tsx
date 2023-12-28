@@ -4,12 +4,12 @@ import { Ionicons } from '@expo/vector-icons';
 
 export interface GenderButtonSelectProps{
     selected?: boolean;
-    gender?: 'male' | 'female',
+    gender?: 'muž' | 'žena',
     onPress?: ()=> void;
 }
 
 const GenderButtonSelect: React.FC<GenderButtonSelectProps> = ({
-    selected, gender = 'male', onPress
+    selected, gender = 'muž', onPress
 })=>{
 
     // Styles
@@ -24,7 +24,7 @@ const GenderButtonSelect: React.FC<GenderButtonSelectProps> = ({
             onPress={onPress}
         >
             {
-                gender === 'male' ?
+                gender === 'muž' ?
                 <Ionicons name="male-outline" size={75} color={selected ? 'white' : '#8E8E98'} />
                 :
                 <Ionicons name="female-outline" size={75} color={selected ? 'white' : '#8E8E98'} />

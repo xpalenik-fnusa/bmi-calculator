@@ -8,14 +8,16 @@ export interface SliderSelectProps{
     label?: string;
     suffix?: string;
     onValueChange?: (value: number)=> void;
+    minimum?: number;
+    maximum?: number;
 }
 
 const SliderSelect: React.FC<SliderSelectProps> = ({
-    label = 'Height', suffix = 'cm', onValueChange
+    label = 'Height', suffix = 'cm', minimum = 0, maximum = 300, onValueChange
 })=>{
 
     // State
-    const [displayValue, setDisplayValue] = React.useState<number>(0);
+    const [displayValue, setDisplayValue] = React.useState<number>(minimum);
 
     // Handlers
     const handleChange = (value: number)=>{
@@ -34,12 +36,12 @@ const SliderSelect: React.FC<SliderSelectProps> = ({
             </Text>
 
             <Slider
-                style={{width: '100%', height: 400}}
+                style={{width: '100%'}}
                 thumbTintColor="#D83456"
                 step={1}
-                minimumValue={0}
+                minimumValue={ minimum }
                 onValueChange={handleChange}
-                maximumValue={300}
+                maximumValue={ maximum }
                 minimumTrackTintColor="#FFFFFF"
                 maximumTrackTintColor="#888994"
             />
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
+        marginBottom: '1%'
         // flex: 1
     },
 
@@ -65,9 +68,8 @@ const styles = StyleSheet.create({
 
     valueText:{
         color: "white",
-        fontSize: 60,
+        fontSize: 40,
         fontWeight: "600",
-        marginBottom: '5%'
     }
 })
 

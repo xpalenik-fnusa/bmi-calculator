@@ -1,7 +1,7 @@
 import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ParamListBase } from '@react-navigation/native';
-import { Text, StyleSheet, View, TouchableOpacity, StyleProp, ViewStyle, TextStyle } from 'react-native';
+import { Text, StyleSheet, View, TouchableOpacity, StyleProp, ViewStyle, TextStyle, Platform } from 'react-native';
 import MainLayout from '../layouts/MainLayout';
 import GenderButtonSelect from '../components/GenderButtonSelect';
 import SliderSelect from '../components/SliderSelect';
@@ -15,7 +15,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
     // type
     interface FormState{
-        gender?: 'male' | 'female';
+        gender?: 'muž' | 'žena';
         height?: number;
         weight?: number;
         age?: number;
@@ -53,7 +53,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
         }))
     }
 
-    const handlePress = (value: 'male' | 'female')=>{
+    const handlePress = (value: 'muž' | 'žena')=>{
         setFormState((prevState)=>({
             ...prevState,
             gender: prevState.gender === value ? undefined : value
@@ -80,39 +80,36 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                 <View style={styles.inner}>
 
                     {/** Gender Button Group */}
-                    <View style={{ gap: 10, flexDirection: 'row'}}>
-                        <GenderButtonSelect 
-                            onPress={()=> handlePress('male')}
-                            selected={formState.gender === 'male'}
+                    <View style={{ gap: 10, flexDirection: 'row', marginVertical: '2%'}}>
+                        <GenderButtonSelect
+                            gender='muž'
+                            onPress={()=> handlePress('muž')}
+                            selected={formState.gender === 'muž'}
                         />
                         <GenderButtonSelect 
-                            gender='female' 
-                            onPress={()=> handlePress('female')}
-                            selected={formState.gender === 'female'}
+                            gender='žena' 
+                            onPress={()=> handlePress('žena')}
+                            selected={formState.gender === 'žena'}
                         />
                     </View>
 
                     {/** Height Slider */}
-                    <View style={{ marginVertical: '5%' }}>
-                        <SliderSelect onValueChange={(value)=> handleChange('height', value)}/>
+                    <View>
+                        <SliderSelect label='Výška' suffix='cm' minimum={100} maximum={200} onValueChange={(value)=> handleChange('height', value)}/>
                     </View>
 
-                    {/** Weight and Age Counters */}
-                    <View style={{ gap: 10, flexDirection: 'row' }}>
-                        <CounterSelect
-                            label='weight'
-                            suffix='kg'
-                            defaultValue={60}
-                            onValueChange={(value)=> handleChange('weight', value)}
-                        />
-                        <CounterSelect 
-                            label='age'
-                            onValueChange={(value)=> handleChange('age', value)}
-                        />
+                    {/** Weight Slider */}
+                    <View>
+                        <SliderSelect label='Hmotnost' suffix='kg' minimum={20} maximum={150} onValueChange={(value)=> handleChange('weight', value)}/>
+                    </View>
+
+                    {/** Age Slider */}
+                    <View>
+                        <SliderSelect label='Věk' suffix='let' minimum={6} maximum={100} onValueChange={(value)=> handleChange('age', value)}/>
                     </View>
 
                     {/** Button */}
-                    <View style={{ marginTop: '10%' }}>
+                    <View style={{ marginTop: '2%' }}>
                         <TouchableOpacity
                             activeOpacity={0.5}
                             style={btnStyle}
@@ -120,7 +117,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                             onPress={calculateBmi}
                         >
                             <Text style={btnTextStyle} >
-                                Calculate your BMI
+                                Vypočítej BMI
                             </Text>
                         </TouchableOpacity>
                     </View>
@@ -141,7 +138,8 @@ const styles = StyleSheet.create({
     inner: {
         backgroundColor: "#0A0C21",
         flex: 1,
-        padding: 10
+        padding: 10,
+        ...Platform.OS === 'web' && { width: '60%', alignSelf: 'center'}
     },
 
     btn:{
