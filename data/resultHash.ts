@@ -1,25 +1,25 @@
 export const resultHash = {
-    'Underweight': {
+    'Podváha': {
         range: "< 18.5 kg/m2",
-        text: "You're in the underweight range. \n Please eat some food",
+        text: "Máte podváhu \n",
         color: "#FD7F20"
     },
 
-    'Normal': {
+    'Normální': {
         range: "18.5 and 24.9 kg/m2",
-        text: "You're in the healthy weight range. \n Good job!",
+        text: "Máte normální váhu \n Výborná práce!",
         color: "#00A300"
     },
 
-    'Overweight': {
+    'Nadváha': {
         range: "25 and 29.9 kg/m2",
-        text: "You're in the overweight range. \n Watch it!",
+        text: "Nacházíte se v rozsahu mírné nadváhy \n",
         color: "#E9D502"
     },
 
-    'Obese': {
+    'Obezita': {
         range: "> 30 kg/m2",
-        text: "You're in the obese range. \n It's time to start taking some measures!",
+        text: "Nacházíte se v pásmu obezity \n Měli byste zvážit kroky pro redukci hmotnosti!",
         color: "#FF0000"
     },
 }

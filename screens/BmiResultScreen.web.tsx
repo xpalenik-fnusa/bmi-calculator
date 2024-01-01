@@ -62,7 +62,7 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
                             onPress={handleRecalculate}
                         >
                             <Text style={styles.btnTextStyle} >
-                                Re-Calculate your BMI
+                                Znovu vypočítat BMI
                             </Text>
                         </TouchableOpacity>
                     </View>

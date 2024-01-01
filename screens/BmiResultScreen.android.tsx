@@ -23,16 +23,16 @@ const BmiResultAndroidScreen: React.FC<NativeStackScreenProps<ParamListBase>> = 
     const getBmiDataKey: ()=> keyof typeof resultHash = ()=>{
 
         if (bmi < 18.5) {
-            return 'Underweight'
+            return 'Podváha'
         }
         else if (bmi >= 18.5 && bmi <= 24.9) {
-            return 'Normal'
+            return 'Normální'
         }
         else if (bmi >= 25 && bmi <= 29.9) {
-            return 'Overweight'
+            return 'Nadváha'
         }
         else{
-            return 'Obese'
+            return 'Obezita'
         }
     }
 
@@ -56,7 +56,7 @@ const BmiResultAndroidScreen: React.FC<NativeStackScreenProps<ParamListBase>> = 
                 
                 {/** Inner Main container */}
                 <View style={styles.inner}>
-                    <Text style={styles.header} >Your Result</Text>
+                    <Text style={styles.header} >Vaše výsledky</Text>
 
                     {/** Result view */}
                     <View style={styles.result} >
@@ -65,7 +65,7 @@ const BmiResultAndroidScreen: React.FC<NativeStackScreenProps<ParamListBase>> = 
                         <Text style={styles.value} >{ bmi }</Text>
 
                         <Text style={styles.rangeLabel} >
-                            { getBmiDataKey() } BMI range:
+                            { getBmiDataKey() } BMI:
                         </Text>
 
                         <Text style={styles.rangeText} >
@@ -85,7 +85,7 @@ const BmiResultAndroidScreen: React.FC<NativeStackScreenProps<ParamListBase>> = 
                             onPress={handleRecalculate}
                         >
                             <Text style={styles.btnTextStyle} >
-                                Re-Calculate your BMI
+                                Znovu vypočítat BMI
                             </Text>
                         </TouchableOpacity>
                     </View>
