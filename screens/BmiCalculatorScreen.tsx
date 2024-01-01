@@ -67,7 +67,12 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
             let heightMeters = height/100;
             const bmiResult = (weight / (heightMeters * heightMeters)).toFixed(2);
             console.log(bmiResult);
-            navigation.navigate(ScreenName.BMI_RESULT, { bmi: Number.parseInt(bmiResult) });
+            const screenToNavigate = (
+                Platform.OS === 'android' ? ScreenName.BMI_RESULT_ANDROID :
+                Platform.OS === 'web'     ? ScreenName.BMI_RESULT_WEB_SPEEDOMETER :
+                ScreenName.BMI_RESULT_ANDROID // by default (because speedometer doesn't work on Android)
+            );
+            navigation.navigate(screenToNavigate, { bmi: Number.parseInt(bmiResult) });
         }
        
     };

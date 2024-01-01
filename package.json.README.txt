@@ -1,0 +1,16 @@
+The plugin "react-d3-speedometer" requires at least version "2.1.0-rc.0" to support React 18. The plugin developement has ceased, so the "master" branch might offer even better React 18 support, hopefully without introducing new bugs, given its "LTS status". However, building "master" is non-trivial (npm install won't work) and there is currently now reason (bug) that necessitates it, so I decided to stick with "^2.1.0-rc.0". 
+
+Here are the alternatives:
+"react-d3-speedometer": "github:palerdot/react-d3-speedometer#master",
+"react-d3-speedometer": "^2.1.0-rc.0",
+
+To build react-d3-speedometer from "master":
+
+cd ~
+git clone https://github.com/palerdot/react-d3-speedometer.git
+cd react-d3-speedometer
+npm install --legacy-peer-deps # these are just for testing
+npm run build
+npm link
+cd ~/bmi-calculator
+npm link react-d3-speedometer

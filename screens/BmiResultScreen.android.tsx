@@ -11,7 +11,7 @@ interface RootStackParamList extends ParamListBase{
     }
 }
 
-const BmiResultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
+const BmiResultAndroidScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
     route, navigation
 })=>{
 
@@ -171,4 +171,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default BmiResultScreen;
+export default BmiResultAndroidScreen;
