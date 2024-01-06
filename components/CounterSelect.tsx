@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
     View, StyleSheet, Text, TouchableOpacity
 } from 'react-native';
@@ -40,6 +40,31 @@ const CounterSelect: React.FC<CounterSelectProps> = ({
     //     setBmi(bmiResult);
     // };
 
+    const [intervalId, setIntervalId] = useState<number | NodeJS.Timeout | null>(null);
+    
+    const updateValue = (delta: number) => {
+        let newValue = displayValue + delta;
+        setDisplayValue(prevDisplayValue => prevDisplayValue + delta);
+        onValueChange && onValueChange(newValue);
+    };
+
+    const handlePressIn = (delta: number) => {
+        updateValue(delta);
+
+        setTimeout(() => {
+            delta *= 3;
+        }, 1000);
+
+        intervalId && clearInterval(intervalId);
+        const id = setInterval(() => {
+            updateValue(delta);
+        }, 200);
+        setIntervalId(id);
+    };
+
+    const handlePressOut = () => {
+        intervalId && clearInterval(intervalId);
+    };
 
     return(
         <View style={[styles.container]}>
@@ -54,14 +79,16 @@ const CounterSelect: React.FC<CounterSelectProps> = ({
                 <TouchableOpacity 
                     activeOpacity={0.5}
                     style={styles.btn}
-                    onPress={handleSubtract}
+                    onPressIn={() => handlePressIn(-1)}
+                    onPressOut={handlePressOut}
                 >
                     <AntDesign name="minus" size={40} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.5}
                     style={styles.btn}
-                    onPress={handleAdd}
+                    onPressIn={() => handlePressIn(1)}
+                    onPressOut={handlePressOut}
                 >
                     <AntDesign name="plus" size={40} color="white" />
                 </TouchableOpacity>
