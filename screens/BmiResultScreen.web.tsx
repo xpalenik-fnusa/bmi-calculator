@@ -30,7 +30,7 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
                 
                 {/** Inner Main container */}
                 <View style={styles.inner}>
-                    <Text style={styles.header} >Your Result</Text>
+                    <Text style={styles.header} >Vaše BMI</Text>
 
                     {/** Result view */}
                     <View style={styles.result} >
