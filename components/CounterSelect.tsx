@@ -64,6 +64,7 @@ const CounterSelect: React.FC<CounterSelectProps> = ({
 
     const handlePressOut = () => {
         intervalId && clearInterval(intervalId);
+        updateValue(0);
     };
 
     return(
