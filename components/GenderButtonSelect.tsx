@@ -15,20 +15,21 @@ const GenderButtonSelect: React.FC<GenderButtonSelectProps> = ({
 
     // Styles
     const selectedStyle: StyleProp<TextStyle> = {
-        color: 'white'
+        color: 'white',
+        fontSize: 24
     }
 
     return(
         <TouchableOpacity
             activeOpacity={0.5}
-            style={[styles.container]}
+            style={[styles.container, selected && styles.selectedContainer ]}
             onPress={onPress}
         >
             {
                 gender === 'muž' ?
-                <Ionicons name="male-outline" size={75} color={selected ? 'white' : '#8E8E98'} />
+                <Ionicons name="male-outline" size={selected ? 85 : 75} color={selected ? 'white' : '#E8E8E8'} />
                 :
-                <Ionicons name="female-outline" size={75} color={selected ? 'white' : '#8E8E98'} />
+                <Ionicons name="female-outline" size={selected ? 85 : 75} color={selected ? 'white' : '#E8E8E8'} />
             }
             <Text style={[styles.label, selected && selectedStyle]}>
                 { adult ? gender.toUpperCase() : (gender === 'muž' ? 'CHLAPEC' : 'DÍVKA') }
@@ -39,16 +40,20 @@ const GenderButtonSelect: React.FC<GenderButtonSelectProps> = ({
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#1D1F32",
+        backgroundColor: "#702f8a",
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
         flex: 1
     },
+    
+    selectedContainer: {
+        backgroundColor: "rgba(110, 47, 138, 0.5)", // Decreased opacity for selected state
+    },
 
     label:{
-        color: '#8E8E98',
+        color: '#E8E8E8',
         fontSize: 20,
         fontWeight: "600",
     }

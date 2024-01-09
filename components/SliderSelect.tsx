@@ -37,7 +37,7 @@ const SliderSelect: React.FC<SliderSelectProps> = ({
 
             <Slider
                 style={{width: '100%'}}
-                thumbTintColor="#D83456"
+                thumbTintColor="#1D2032"
                 step={1}
                 minimumValue={ minimum }
                 onValueChange={handleChange}
@@ -51,7 +51,7 @@ const SliderSelect: React.FC<SliderSelectProps> = ({
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#111426",
+        backgroundColor: "#702f8a",
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
 
     label:{
-        color: '#8E8E98',
+        color: '#B3B3B3',
         fontSize: 20,
         fontWeight: "600",
     },

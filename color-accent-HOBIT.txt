@@ -1,0 +1,7 @@
+HOBIT COLORS:
+
+pink (ružová):
+#fce4f1 
+
+purple (fialová):
+#702f8a 
