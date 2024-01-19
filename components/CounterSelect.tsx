@@ -100,7 +100,7 @@ const CounterSelect: React.FC<CounterSelectProps> = ({
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#702f8a",
+        backgroundColor: "rgba(124, 67, 189, 1)",
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',

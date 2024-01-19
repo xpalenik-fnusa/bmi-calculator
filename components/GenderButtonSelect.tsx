@@ -40,16 +40,18 @@ const GenderButtonSelect: React.FC<GenderButtonSelectProps> = ({
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#702f8a",
+        backgroundColor: "rgba(124, 67, 189, 1)",
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        flex: 1
+        flex: 1,
+        borderWidth: 2,
+        borderColor: '#FFFFFF'
     },
     
     selectedContainer: {
-        backgroundColor: "rgba(110, 47, 138, 0.5)", // Decreased opacity for selected state
+        backgroundColor: "rgba(124, 67, 189, 0.3)" // same color, just more opaque
     },
 
     label:{
