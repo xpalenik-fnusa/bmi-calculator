@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     },
 
     inner: {
+        borderRadius: 20,
         backgroundColor: "rgba(74, 20, 140, 1)",
         flex: 1,
         padding: 10,
