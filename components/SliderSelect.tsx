@@ -37,7 +37,7 @@ const SliderSelect: React.FC<SliderSelectProps> = ({
 
             <Slider
                 style={{width: '100%'}}
-                thumbTintColor="#1D2032"
+                thumbTintColor="white"
                 step={1}
                 minimumValue={ minimum }
                 onValueChange={handleChange}
