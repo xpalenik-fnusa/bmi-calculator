@@ -1,0 +1,12 @@
+Following are some suggestions for the "Caluclate BMI" button colors. These colors fit the light/dark-violet color accent.
+
+svetloružová
+#b943bd
+rgba(185, 67, 189, 1)
+
+svetlozelená
+#84bd43
+rgba(132, 189, 67, 0.9)
+
+rubínová (Rubine Red) z Logomanuálu
+rgba(227, 0, 89, 0.9)

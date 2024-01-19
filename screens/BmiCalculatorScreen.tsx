@@ -31,7 +31,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
     // Styles
     const btnStyle: StyleProp<ViewStyle> = {
-        backgroundColor: isButtonDisabled() ? "rgba(227, 0, 89, 0.3)" : "rgba(227, 0, 89, 0.9)", // same colors, different opacities
+        backgroundColor: isButtonDisabled() ? "rgba(185, 67, 189, 0.5)" : "rgba(185, 67, 189, 1)", // same colors, different opacities
         borderRadius: 8,
         alignItems: 'center',
         flexDirection: 'row',
