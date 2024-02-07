@@ -139,14 +139,14 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#080A1C",
         flex: 1,
-        paddingTop: '1%',
+        justifyContent: 'center',
         paddingHorizontal: '3%'
     },
 
     inner: {
         borderRadius: 20,
         backgroundColor: "#6D2B87",
-        padding: 10,
+        padding: 20,
      },
 
     btn:{
