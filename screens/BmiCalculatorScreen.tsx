@@ -84,7 +84,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                 <View style={styles.inner}>
 
                     {/** Gender Button Group */}
-                    <View style={{ gap: 10, flexDirection: 'row', marginVertical: '2%'}}>
+                    <View style={{ gap: 10, flexDirection: 'row', marginVertical: '1%'}}>
                         <GenderButtonSelect
                             gender='muž'
                             adult={ formState.age === undefined || formState.age >= 18  }
