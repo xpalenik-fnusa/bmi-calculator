@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
         color: '#E8E8E8',
         fontSize: 20,
         fontWeight: "600",
+        fontFamily: 'Dosis',
     }
 })
 

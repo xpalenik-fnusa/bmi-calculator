@@ -41,7 +41,8 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
     let btnTextStyle: StyleProp<TextStyle> = {
         color: "white",
         fontSize: 20,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        fontFamily: 'Dosis'
     }
 
     // Handlers

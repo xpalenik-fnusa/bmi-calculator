@@ -64,12 +64,14 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 20,
         fontWeight: "600",
+        fontFamily: 'Dosis',
     },
 
     valueText:{
         color: "white",
         fontSize: 40,
         fontWeight: "600",
+        fontFamily: 'Dosis',
     }
 })
 
