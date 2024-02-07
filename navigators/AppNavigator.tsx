@@ -12,41 +12,17 @@ const AppNavigator = ()=>{
             <AppStack.Screen 
                 name={ScreenName.BMI_CALCULATOR}
                 component={BmiCalculatorScreen}
-                options={{
-                    title: 'BMI CALCULATOR',
-                    headerStyle:{
-                        backgroundColor: "#0A0C21",
-                    },
-                    headerTitleStyle:{
-                        color: 'white'
-                    }
-                }}
+                options={{headerShown: false}}
             />
             <AppStack.Screen 
                 name={ScreenName.BMI_RESULT_WEB_SPEEDOMETER}
                 component={BmiResultWebSpeedometerScreen}
-                options={{
-                    title: 'BMI CALCULATOR',
-                    headerStyle:{
-                        backgroundColor: "#0A0C21",
-                    },
-                    headerTitleStyle:{
-                        color: 'white'
-                    }
-                }}
+                options={{headerShown: false}}
             />
             <AppStack.Screen 
                 name={ScreenName.BMI_RESULT_ANDROID}
                 component={BmiResultAndroidScreen}
-                options={{
-                    title: 'BMI CALCULATOR',
-                    headerStyle:{
-                        backgroundColor: "#0A0C21",
-                    },
-                    headerTitleStyle:{
-                        color: 'white'
-                    }
-                }}
+                options={{headerShown: false}}
             />
         </AppStack.Navigator>
     )
