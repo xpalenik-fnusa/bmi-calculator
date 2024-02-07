@@ -36,7 +36,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        padding: 15
+        padding: 35
     }
     let btnTextStyle: StyleProp<TextStyle> = {
         color: "white",
@@ -115,7 +115,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                     </View>
 
                     {/** Button */}
-                    <View style={{ marginTop: '2%' }}>
+                    <View style={{ marginTop: '2%', marginBottom: '1%' }}>
                         <TouchableOpacity
                             activeOpacity={0.5}
                             style={btnStyle}
@@ -145,7 +145,6 @@ const styles = StyleSheet.create({
     inner: {
         borderRadius: 20,
         backgroundColor: "rgba(74, 20, 140, 1)",
-        flex: 1,
         padding: 10,
      },
 
