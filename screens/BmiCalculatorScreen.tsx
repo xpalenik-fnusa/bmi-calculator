@@ -146,8 +146,7 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(74, 20, 140, 1)",
         flex: 1,
         padding: 10,
-        ...Platform.OS === 'web' && { width: '60%', alignSelf: 'center'}
-    },
+     },
 
     btn:{
 
