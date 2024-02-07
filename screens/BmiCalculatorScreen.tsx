@@ -123,7 +123,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                             onPress={calculateBmi}
                         >
                             <Text style={btnTextStyle} >
-                            🖩 Vypočítej BMI
+                            Vypočítej BMI
                             </Text>
                         </TouchableOpacity>
                     </View>
