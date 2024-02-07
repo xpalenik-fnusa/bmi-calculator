@@ -33,10 +33,10 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
                     <Text style={styles.header} >Vaše BMI</Text>
 
                     {/** Result view */}
-                    <View style={styles.result} >
+                    <View style={{ alignSelf: 'center' }}>
                     <ReactSpeedometer
                         fluidWidth={false}
-                        width={500}
+                        width={window.innerWidth > 768 ? 400 : window.innerWidth - 50}
                         minValue={10}
                         maxValue={40}
                         value={bmi}
@@ -46,9 +46,9 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
                         segments={4}
                         customSegmentStops={[10, 18.5, 25, 30, 40]}
                         segmentColors={['#ebcb8b', '#a3be8c', '#d08770', '#bf616a'  ]}
-                        valueTextFontSize={'130px'}
+                        valueTextFontSize={'100px'}
                         needleHeightRatio={0.8}
-                        labelFontSize={'40px'}
+                        labelFontSize={'30px'}
                         paddingHorizontal={17}
                         paddingVertical={17}
                     />
@@ -77,30 +77,25 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#080A1C",
         flex: 1,
-        paddingTop: '1%',
-        paddingHorizontal: '3%'
+        paddingHorizontal: '3%',
+        justifyContent: 'center'
     },
 
     inner: {
         backgroundColor: "#0A0C21",
-        flex: 1,
-        padding: 10,
-        ...Platform.OS === 'web' && { width: '50%', alignSelf: 'center'}
+        padding: 30,
+        alignSelf: 'center',
+        width: '50%',
     },
 
     header:{
         color: 'white',
         fontSize: 40,
-        fontWeight: '600'
+        fontWeight: '600',
+        alignSelf: 'center',
+        paddingBottom: '4%',
     },
 
-    result:{
-        backgroundColor: "#1D1F32",
-        marginVertical: '5%',
-        borderRadius: 8,
-        alignItems: 'center',
-        paddingVertical: '5%'
-    },
 
     btnStyle: {
         backgroundColor: "#D83456",
