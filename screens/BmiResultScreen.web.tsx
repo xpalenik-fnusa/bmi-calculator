@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#080A1C",
         flex: 1,
-        padding: '3%'
+        paddingTop: '1%',
+        paddingHorizontal: '3%'
     },
 
     inner: {
