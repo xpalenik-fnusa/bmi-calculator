@@ -140,7 +140,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#080A1C",
         flex: 1,
         justifyContent: 'center',
-        paddingHorizontal: '3%'
+        paddingHorizontal: '3%',
+        width: window.innerWidth > 768 ? '50%' : '100%',
+        alignSelf: 'center',
     },
 
     inner: {
