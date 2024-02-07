@@ -14,10 +14,14 @@ interface RootStackParamList extends ParamListBase{
 const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
     route, navigation
 })=>{
+    const BMI_MIN = 10;
+    const BMI_MAX = 40;
 
     // Variables
     let params = route.params as any;
-    let bmi = params?.bmi || 30;
+    let bmi = params?.bmi || (BMI_MIN + BMI_MAX)/2;
+    bmi = bmi < BMI_MIN ? BMI_MIN : bmi;
+    bmi = bmi > BMI_MAX ? BMI_MAX : bmi;
 
     // Handlers
     const handleRecalculate = ()=>{
@@ -37,8 +41,8 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
                     <ReactSpeedometer
                         fluidWidth={false}
                         width={window.innerWidth > 768 ? 400 : window.innerWidth - 50}
-                        minValue={10}
-                        maxValue={40}
+                        minValue={BMI_MIN}
+                        maxValue={BMI_MAX}
                         value={bmi}
                         needleColor="steelblue"
                         needleTransitionDuration={1200}
