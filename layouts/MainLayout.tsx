@@ -23,7 +23,7 @@ const MainLayout: React.FC<any> = ({ children })=>{
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: "#080A1C",
+      backgroundColor: "#D6BCFA",
       flex: 1
     },
 });

@@ -40,7 +40,7 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
                     <View style={{ alignSelf: 'center' }}>
                     <ReactSpeedometer
                         fluidWidth={false}
-                        width={window.innerWidth > 768 ? 400 : window.innerWidth - 50}
+                        width={window.innerWidth > 768 ? 500 : window.innerWidth - 50}
                         minValue={BMI_MIN}
                         maxValue={BMI_MAX}
                         value={bmi}
@@ -79,7 +79,7 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#080A1C",
+        backgroundColor: "#D6BCFA",
         flex: 1,
         paddingHorizontal: '3%',
         justifyContent: 'center',
@@ -88,12 +88,15 @@ const styles = StyleSheet.create({
     },
 
     inner: {
-        backgroundColor: "#0A0C21",
+        backgroundColor: "#D6BCFA",
         padding: 20,
+        borderWidth: 5,
+        borderColor: "white",
+        borderStyle: 'solid',
     },
 
     header:{
-        color: 'white',
+        color: 'rgb(102, 102, 102)',
         fontSize: 40,
         fontWeight: '600',
         alignSelf: 'center',
