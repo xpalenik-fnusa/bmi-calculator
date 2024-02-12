@@ -49,7 +49,7 @@ const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBa
                         needleTransition={Transition.easeBounceIn}
                         segments={4}
                         customSegmentStops={[10, 18.5, 25, 30, 40]}
-                        segmentColors={['#ebcb8b', '#a3be8c', '#d08770', '#bf616a'  ]}
+                        segmentColors={["#ebbf67", "#93be6f", "#d06f50", "#bf4450"]}
                         valueTextFontSize={'100px'}
                         needleHeightRatio={0.8}
                         labelFontSize={'30px'}
