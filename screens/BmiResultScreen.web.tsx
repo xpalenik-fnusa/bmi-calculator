@@ -82,14 +82,14 @@ const styles = StyleSheet.create({
         backgroundColor: "#080A1C",
         flex: 1,
         paddingHorizontal: '3%',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignSelf: 'center',
+        width: window.innerWidth > 768 ? '50%' : '100%',
     },
 
     inner: {
         backgroundColor: "#0A0C21",
-        padding: 30,
-        alignSelf: 'center',
-        width: window.innerWidth > 768 ? '50%' : '100%',
+        padding: 20,
     },
 
     header:{
@@ -99,22 +99,24 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         paddingBottom: '4%',
         textTransform: 'uppercase',
+        fontFamily: 'Dosis',
     },
 
 
     btnStyle: {
-        backgroundColor: "#D83456",
+        backgroundColor: "rgba(237,17,101, 1)",
         borderRadius: 8,
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        padding: 15
+        padding: 20
     },
 
     btnTextStyle: {
         color: "white",
         fontSize: 20,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        fontFamily: 'Dosis',
     },
 });
 
