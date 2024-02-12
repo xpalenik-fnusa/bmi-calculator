@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         alignSelf: 'center',
         paddingBottom: '4%',
+        textTransform: 'uppercase',
     },
 
 
