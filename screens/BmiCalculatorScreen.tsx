@@ -36,7 +36,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        padding: 30
+        padding: 15
     }
     let btnTextStyle: StyleProp<TextStyle> = {
         color: "white",

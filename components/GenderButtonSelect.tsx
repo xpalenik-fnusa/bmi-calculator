@@ -27,9 +27,9 @@ const GenderButtonSelect: React.FC<GenderButtonSelectProps> = ({
         >
             {
                 gender === 'muž' ?
-                <Ionicons name="male-outline" size={selected ? 85 : 75} color={selected ? 'white' : '#E8E8E8'} />
+                <Ionicons name="male-outline" size={selected ? 75 : 65} color={selected ? 'white' : '#E8E8E8'} />
                 :
-                <Ionicons name="female-outline" size={selected ? 85 : 75} color={selected ? 'white' : '#E8E8E8'} />
+                <Ionicons name="female-outline" size={selected ? 75 : 65} color={selected ? 'white' : '#E8E8E8'} />
             }
             <Text style={[styles.label, selected && selectedStyle]}>
                 { adult ? gender.toUpperCase() : (gender === 'muž' ? 'CHLAPEC' : 'DÍVKA') }
