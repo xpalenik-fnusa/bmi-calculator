@@ -149,7 +149,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: "#6D2B87",
         padding: 20,
-        boxShadow: "20px 40px 80px 0 rgba(0, 0, 0, 1)"
      },
 
     btn:{
