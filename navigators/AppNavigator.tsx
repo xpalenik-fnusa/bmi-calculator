@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BmiCalculatorScreen from "../screens/BmiCalculatorScreen";
 import { ScreenName } from "../types/ScreenName";
-import BmiResultWebSpeedometerScreen from "../screens/BmiResultScreen.web";
-import BmiResultAndroidScreen from "../screens/BmiResultScreen.android";
+import BmiResultAdultScreen from "../screens/BmiResultScreen.adult";
+import BmiResultUnderagedScreen from "../screens/BmiResultScreen.underaged";
 
 const AppStack = createNativeStackNavigator();
 
@@ -15,13 +15,13 @@ const AppNavigator = ()=>{
                 options={{headerShown: false}}
             />
             <AppStack.Screen 
-                name={ScreenName.BMI_RESULT_WEB_SPEEDOMETER}
-                component={BmiResultWebSpeedometerScreen}
+                name={ScreenName.BMI_RESULT_ADULT}
+                component={BmiResultAdultScreen}
                 options={{headerShown: false}}
             />
             <AppStack.Screen 
-                name={ScreenName.BMI_RESULT_ANDROID}
-                component={BmiResultAndroidScreen}
+                name={ScreenName.BMI_RESULT_UNDERAGED}
+                component={BmiResultUnderagedScreen}
                 options={{headerShown: false}}
             />
         </AppStack.Navigator>

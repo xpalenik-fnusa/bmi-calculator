@@ -11,7 +11,7 @@ interface RootStackParamList extends ParamListBase{
     }
 }
 
-const BmiResultWebSpeedometerScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
+const BmiResultAdultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
     route, navigation
 })=>{
     const BMI_MIN = 10;
@@ -120,4 +120,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default BmiResultWebSpeedometerScreen;
+export default BmiResultAdultScreen;

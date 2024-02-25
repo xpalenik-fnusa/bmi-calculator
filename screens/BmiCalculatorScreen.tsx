@@ -6,6 +6,7 @@ import MainLayout from '../layouts/MainLayout';
 import GenderButtonSelect from '../components/GenderButtonSelect';
 import SliderSelect from '../components/SliderSelect';
 import { ScreenName } from '../types/ScreenName';
+import { get_percentiles, compute_percentile_rank_upper_bound, PercentileRank } from '../data/percentiles';
 
 
 const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
@@ -61,18 +62,29 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
     }
 
     const calculateBmi = () => {
-        let { weight, height } = formState;
+        let { weight, height, age, gender} = formState;
 
-        if (weight && height) {
+        if (weight && height && age && gender) {
             let heightMeters = height/100;
-            const bmiResult = (weight / (heightMeters * heightMeters)).toFixed(2);
-            console.log(bmiResult);
-            const screenToNavigate = (
-                Platform.OS === 'android' ? ScreenName.BMI_RESULT_ANDROID :
-                Platform.OS === 'web'     ? ScreenName.BMI_RESULT_WEB_SPEEDOMETER :
-                ScreenName.BMI_RESULT_ANDROID // by default (because speedometer doesn't work on Android)
-            );
-            navigation.navigate(screenToNavigate, { bmi: Number.parseInt(bmiResult) });
+            const bmi: number = weight / (heightMeters * heightMeters);
+            const bmiResult: string = bmi.toFixed(2);
+            
+            if (age <= 18) {
+                console.log('Using percentile table for childrens and adolescents');
+                console.log('Age:', age);
+                console.log('Gender:', gender);
+                
+                const percentiles: number[][] = get_percentiles(gender);
+                console.log('Percentiles for the given age are:', percentiles[age]);
+
+                const percentile_rank_upper_bound: PercentileRank = compute_percentile_rank_upper_bound(bmi, percentiles[age]);
+                console.log('The percentile rank (upper bound of the range) for this person is:', percentile_rank_upper_bound);
+
+                navigation.navigate(ScreenName.BMI_RESULT_UNDERAGED, { percentile_rank_upper_bound: percentile_rank_upper_bound });
+            } else {
+                console.log('BMI:', bmiResult);
+                navigation.navigate(ScreenName.BMI_RESULT_ADULT, { bmi: Number.parseInt(bmiResult) });
+            }
         }
        
     };
