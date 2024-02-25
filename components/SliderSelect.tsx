@@ -10,18 +10,23 @@ export interface SliderSelectProps{
     onValueChange?: (value: number)=> void;
     minimum?: number;
     maximum?: number;
+    value?: number;
 }
 
 const SliderSelect: React.FC<SliderSelectProps> = ({
-    label = 'Height', suffix = 'cm', minimum = 0, maximum = 300, onValueChange
+    label = 'Height', suffix = 'cm', minimum = 0, maximum = 300, value = ((minimum+maximum)/2), onValueChange
 })=>{
 
     // State
-    const [displayValue, setDisplayValue] = React.useState<number>(minimum);
+    const [displayValue, setDisplayValue] = React.useState<string | number>(label === 'Věk' ? '18+' : ((minimum+maximum)/2).toString());
 
     // Handlers
     const handleChange = (value: number)=>{
-        setDisplayValue(value);
+        if (label === 'Věk' && value === maximum) {
+            setDisplayValue('18+');
+        } else {
+            setDisplayValue(value);
+        }
         onValueChange && onValueChange(value);
     }
 
@@ -44,6 +49,7 @@ const SliderSelect: React.FC<SliderSelectProps> = ({
                 maximumValue={ maximum }
                 minimumTrackTintColor="#FFFFFF"
                 maximumTrackTintColor="#888994"
+                value={ value }
             />
         </View>
     )
