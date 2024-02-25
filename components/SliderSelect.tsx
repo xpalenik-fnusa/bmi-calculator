@@ -14,16 +14,16 @@ export interface SliderSelectProps{
 }
 
 const SliderSelect: React.FC<SliderSelectProps> = ({
-    label = 'Height', suffix = 'cm', minimum = 0, maximum = 300, value = ((minimum+maximum)/2), onValueChange
+    label = 'Height', suffix = 'cm', minimum = 0, maximum = 300, value = minimum, onValueChange
 })=>{
 
     // State
-    const [displayValue, setDisplayValue] = React.useState<string | number>(label === 'Věk' ? '18+' : ((minimum+maximum)/2).toString());
+    const [displayValue, setDisplayValue] = React.useState<string | number>(label === 'Věk' ? '19+' : value.toString());
 
     // Handlers
     const handleChange = (value: number)=>{
         if (label === 'Věk' && value === maximum) {
-            setDisplayValue('18+');
+            setDisplayValue('19+');
         } else {
             setDisplayValue(value);
         }

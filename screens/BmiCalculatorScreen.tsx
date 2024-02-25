@@ -26,8 +26,7 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
     // Helpers
     const isButtonDisabled = ()=>{
-        return !(formState.gender && formState.age && formState.height
-        && formState.weight)
+        return !(formState.gender && formState.height && formState.weight)
     }
 
     // Styles
@@ -63,6 +62,9 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
     const calculateBmi = () => {
         let { weight, height, age, gender} = formState;
+        
+        // set user to adult (19+) by default
+        age = age || 19;
 
         if (weight && height && age && gender) {
             let heightMeters = height/100;
