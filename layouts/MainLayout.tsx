@@ -1,4 +1,4 @@
-import { StatusBar, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { StatusBar, StyleProp, StyleSheet, View, ViewStyle, ImageBackground } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
@@ -13,19 +13,26 @@ const MainLayout: React.FC<any> = ({ children })=>{
         paddingRight: insets.right,
     }
 
+    const image = require('../assets/meter.jpg');
+
     return(
-        <View style={[styles.container, safeAreaStyle]}>
-            <StatusBar translucent barStyle="light-content" backgroundColor="transparent" />
-            { children }
-        </View>
+        <ImageBackground source={image} style={styles.backgroundImage}>
+            <View style={[styles.container, safeAreaStyle]}>
+                <StatusBar translucent barStyle="light-content" backgroundColor="transparent" />
+                { children }
+            </View>
+        </ImageBackground>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: "#D6BCFA",
       flex: 1
     },
+
+    backgroundImage: {
+        flex: 1
+    }
 });
 
 export default MainLayout;

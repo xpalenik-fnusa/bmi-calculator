@@ -79,7 +79,6 @@ const BmiResultAdultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#D6BCFA",
         flex: 1,
         paddingHorizontal: '3%',
         justifyContent: 'center',
@@ -88,7 +87,6 @@ const styles = StyleSheet.create({
     },
 
     inner: {
-        backgroundColor: "#D6BCFA",
         padding: 20,
         borderWidth: 5,
         borderColor: "white",

@@ -149,7 +149,6 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#D6BCFA",
         flex: 1,
         justifyContent: 'center',
         paddingHorizontal: '3%',

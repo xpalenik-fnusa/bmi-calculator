@@ -102,7 +102,6 @@ const BmiResultUnderagedScreen: React.FC<NativeStackScreenProps<ParamListBase>> 
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#D6BCFA",
         flex: 1,
         paddingHorizontal: '3%',
         justifyContent: 'center',
@@ -111,12 +110,13 @@ const styles = StyleSheet.create({
     },
 
     inner: {
-        backgroundColor: "#D6BCFA",
         padding: 20,
+        borderWidth: 5,
+        borderColor: "white",
+        borderStyle: 'solid',
     },
 
     result:{
-        backgroundColor: "#6D2B87",
         flex: 1,
         marginVertical: '0%',
         borderRadius: 8,
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     },
 
     value:{
-        color: "white",
+        color: "#272727",
         fontSize: 90,
         fontWeight: '700',
         margin: '0%',
@@ -165,13 +165,14 @@ const styles = StyleSheet.create({
     },
 
     description:{
-        color: 'white',
-        fontSize: 24,
+        color: '#272727',
+        fontSize: 28,
         letterSpacing: 0.75,
         marginTop: '3%',
-        marginHorizontal: '3%',
+        marginHorizontal: '6%',
         textAlign: 'center',
         fontFamily: 'Dosis',
+        fontWeight: "bold"
     }
 });
 
