@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     inner: {
         backgroundColor: "#D6BCFA",
         padding: 20,
+        borderWidth: 5,
+        borderColor: "white",
+        borderStyle: 'solid',
     },
 
     header:{
