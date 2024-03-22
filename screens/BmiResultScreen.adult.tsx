@@ -4,6 +4,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ParamListBase } from '@react-navigation/native';
 import { Text, StyleSheet, View, TouchableOpacity, Platform } from 'react-native';
 import MainLayout from '../layouts/MainLayout';
+import { resultHash } from "../data/resultHash";
 
 interface RootStackParamList extends ParamListBase{
     BmiResultScreen:{
@@ -23,6 +24,21 @@ const BmiResultAdultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
     bmi = bmi < BMI_MIN ? BMI_MIN : bmi;
     bmi = bmi > BMI_MAX ? BMI_MAX : bmi;
 
+    // Helpers
+    const getBmiDataKey: ()=> keyof typeof resultHash = ()=>{
+        if (bmi < 18.5) {
+            return 'Podváha'
+        } else if (bmi < 24.9) {
+            return 'Normální'
+        } else if (bmi < 29.9) {
+            return 'Nadváha'
+        } else if (bmi < 200) {
+            return 'Obezita'
+        } else {
+            return 'chyba'
+        }
+    }
+
     // Handlers
     const handleRecalculate = ()=>{
         navigation.goBack();
@@ -34,7 +50,6 @@ const BmiResultAdultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                 
                 {/** Inner Main container */}
                 <View style={styles.inner}>
-                    <Text style={styles.header} >Vaše BMI</Text>
 
                     {/** Result view */}
                     <View style={{ alignSelf: 'center' }}>
@@ -57,6 +72,10 @@ const BmiResultAdultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                         paddingVertical={17}
                     />
                     </View>
+
+                    <Text style={styles.description} >
+                        { resultHash[getBmiDataKey()].text }
+                    </Text>
 
                     {/** Button */}
                     <View>
@@ -118,6 +137,16 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textTransform: 'uppercase',
         fontFamily: 'Dosis',
+    },
+
+    description:{
+        color: 'rgb(102, 102, 102)',
+        fontSize: 28,
+        letterSpacing: 0.75,
+        marginVertical: '3%',
+        textAlign: 'center',
+        fontFamily: 'Dosis',
+        fontWeight: "bold"
     },
 });
 

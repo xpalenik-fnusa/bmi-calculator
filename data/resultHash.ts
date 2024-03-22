@@ -1,25 +1,25 @@
 export const resultHash = {
     'Podváha': {
         range: "< 18.5 kg/m2",
-        text: "Máte podváhu \n",
+        text: "Osoba s BMI pod 18,5 by mohla mít nedostatečnou hmotnost, což může být spojeno s rizikem pro zdraví.",
         color: "#FD7F20"
     },
 
     'Normální': {
         range: "18.5 and 24.9 kg/m2",
-        text: "Máte normální váhu \n Výborná práce!",
+        text: "Tato hodnota je považována za zdravou a optimální pro většinu lidí.",
         color: "#00A300"
     },
 
     'Nadváha': {
         range: "25 and 29.9 kg/m2",
-        text: "Nacházíte se v rozsahu mírné nadváhy \n",
+        text: "Osoba s nadváhou (BMI 25-29,9) by měla dbát na vyváženou stravu a pravidelný pohyb k dosažení zdravé hmotnosti a vyvarování se možným zdravotním rizikům.",
         color: "#E9D502"
     },
 
     'Obezita': {
         range: "> 30 kg/m2",
-        text: "Nacházíte se v pásmu obezity \n Měli byste zvážit kroky pro redukci hmotnosti!",
+        text: "Tato hodnota je klasifikováno jako obezita, což může znamenat zvýšené riziko pro zdraví. Doporučuje se konzultace s lékařem.",
         color: "#FF0000"
     },
     'obézní': {
