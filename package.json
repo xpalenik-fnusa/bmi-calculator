@@ -11,7 +11,7 @@
   "dependencies": {
     "@expo-google-fonts/dosis": "^0.2.3",
     "@expo/webpack-config": "^19.0.0",
-    "@react-native-community/slider": "^4.5.0",
+    "@react-native-community/slider": "4.4.2",
     "@react-navigation/native-stack": "^6.9.17",
     "expo": "^50.0.6",
     "expo-font": "^11.10.2",
