@@ -2,7 +2,7 @@ import ReactSpeedometer, { Transition } from "react-d3-speedometer"
 import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ParamListBase } from '@react-navigation/native';
-import { Text, StyleSheet, View, TouchableOpacity, Platform } from 'react-native';
+import { Text, StyleSheet, View, TouchableOpacity, Platform, Dimensions } from 'react-native';
 import MainLayout from '../layouts/MainLayout';
 import { resultHash } from "../data/resultHash";
 
@@ -53,25 +53,29 @@ const BmiResultAdultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
                     {/** Result view */}
                     <View style={{ alignSelf: 'center' }}>
-                    <ReactSpeedometer
-                        fluidWidth={false}
-                        width={window.innerWidth * 0.2}
-                        height={window.innerHeight * 0.24}
-                        minValue={BMI_MIN}
-                        maxValue={BMI_MAX}
-                        value={bmi}
-                        needleColor="steelblue"
-                        needleTransitionDuration={1200}
-                        needleTransition={Transition.easeBounceIn}
-                        segments={4}
-                        customSegmentStops={[10, 18.5, 25, 30, 40]}
-                        segmentColors={["#ebbf67", "#93be6f", "#d06f50", "#bf4450"]}
-                        valueTextFontSize={'100px'}
-                        needleHeightRatio={0.8}
-                        labelFontSize={'30px'}
-                        paddingHorizontal={17}
-                        paddingVertical={17}
-                    />
+                    { window.innerWidth < 768 || Dimensions.get('window').width < 768 || Platform.OS !== 'web' ? ( 
+                        <Text style={styles.value} >{ bmi }</Text>
+                    ) : (
+                        <ReactSpeedometer
+                            fluidWidth={false}
+                            width={window.innerWidth * 0.2}
+                            height={window.innerHeight * 0.24}
+                            minValue={BMI_MIN}
+                            maxValue={BMI_MAX}
+                            value={bmi}
+                            needleColor="steelblue"
+                            needleTransitionDuration={1200}
+                            needleTransition={Transition.easeBounceIn}
+                            segments={4}
+                            customSegmentStops={[10, 18.5, 25, 30, 40]}
+                            segmentColors={["#ebbf67", "#93be6f", "#d06f50", "#bf4450"]}
+                            valueTextFontSize={'100px'}
+                            needleHeightRatio={0.8}
+                            labelFontSize={'30px'}
+                            paddingHorizontal={17}
+                            paddingVertical={17}
+                        />
+                    )}
                     </View>
 
                     <Text style={styles.description} >
@@ -148,6 +152,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: 'Dosis',
         fontWeight: "bold"
+    },
+
+    value:{
+        color: "rgba(227, 0, 89, 0.7)",
+        fontSize: 130,
+        fontWeight: '900',
+        marginVertical: '10%',
+        fontFamily: 'Dosis',
     },
 });
 
