@@ -55,7 +55,8 @@ const BmiResultAdultScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
                     <View style={{ alignSelf: 'center' }}>
                     <ReactSpeedometer
                         fluidWidth={false}
-                        width={window.innerWidth > 768 ? 500 : window.innerWidth - 50}
+                        width={window.innerWidth * 0.2}
+                        height={window.innerHeight * 0.24}
                         minValue={BMI_MIN}
                         maxValue={BMI_MAX}
                         value={bmi}
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
         color: 'rgb(102, 102, 102)',
         fontSize: 28,
         letterSpacing: 0.75,
-        marginVertical: '3%',
+        marginBottom: '3%',
         textAlign: 'center',
         fontFamily: 'Dosis',
         fontWeight: "bold"
