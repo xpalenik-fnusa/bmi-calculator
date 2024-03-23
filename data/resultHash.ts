@@ -19,7 +19,7 @@ export const resultHash = {
 
     'Obezita': {
         range: "> 30 kg/m2",
-        text: "Tato hodnota je klasifikováno jako obezita, což může znamenat zvýšené riziko pro zdraví. Doporučuje se konzultace s lékařem.",
+        text: "Tato hodnota je klasifikována jako obezita, což může znamenat zvýšené riziko pro zdraví. Doporučuje se konzultace s lékařem.",
         color: "#FF0000"
     },
     'obézní': {
