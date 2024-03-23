@@ -50,11 +50,11 @@ const BmiResultUnderagedScreen: React.FC<NativeStackScreenProps<ParamListBase>> 
     // Styles
     let rangeHeaderStyle: StyleProp<TextStyle> = {
         color: resultHash[getBmiDataKey()].color,
-        fontSize: 50,
+        fontSize: 36,
         textTransform: 'uppercase',
         fontWeight: '600',
         letterSpacing: 2,
-        margin: '3%',
+        marginTop: '2%',
         fontFamily: 'Dosis',
     }
 
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
 
     value:{
         color: "#272727",
-        fontSize: 90,
+        fontSize: 70,
         fontWeight: '700',
         margin: '0%',
         fontFamily: 'Dosis',
