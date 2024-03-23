@@ -116,12 +116,12 @@ const BmiCalculatorScreen: React.FC<NativeStackScreenProps<ParamListBase>> = ({
 
                     {/** Height Slider */}
                     <View>
-                        <SliderSelect label='Výška' suffix='cm' minimum={100} maximum={200} onValueChange={(value)=> handleChange('height', value)}/>
+                        <SliderSelect label='Výška' suffix='cm' minimum={50} maximum={200} onValueChange={(value)=> handleChange('height', value)}/>
                     </View>
 
                     {/** Weight Slider */}
                     <View>
-                        <SliderSelect label='Hmotnost' suffix='kg' minimum={20} maximum={150} onValueChange={(value)=> handleChange('weight', value)}/>
+                        <SliderSelect label='Hmotnost' suffix='kg' minimum={1} maximum={150} onValueChange={(value)=> handleChange('weight', value)}/>
                     </View>
 
                     {/** Age Slider */}
