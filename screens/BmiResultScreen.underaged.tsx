@@ -50,7 +50,7 @@ const BmiResultUnderagedScreen: React.FC<NativeStackScreenProps<ParamListBase>> 
     // Styles
     let rangeHeaderStyle: StyleProp<TextStyle> = {
         color: resultHash[getBmiDataKey()].color,
-        fontSize: 36,
+        fontSize: 34,
         textTransform: 'uppercase',
         fontWeight: '600',
         letterSpacing: 2,
